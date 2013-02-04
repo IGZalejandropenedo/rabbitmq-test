@@ -21,7 +21,7 @@ context.on('ready', function() {
 			}
 			
 			if(d.end) {
-				var end = new Date()).getTime();
+				var end = (new Date()).getTime();
 				console.log("End Receiving: " +  end, "Time: " + (end - start) ,"Count:" + count);
 				process.exit(0);
 			} else {
