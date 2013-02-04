@@ -7,8 +7,6 @@ var count = 0;
 
 var timeMs = (!!process.argv[2] ? parseInt(process.argv[2]) : 10000);
 
-console.log(timeMs);
-
 console.log("Producer - Creating context");
 
 context.on('ready', function() {
