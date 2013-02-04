@@ -5,8 +5,9 @@ var context = require('rabbit.js').createContext();
 var start, end;
 var count = 0;
 
-console.log(process.argv);
 var timeMs = process.argv[2] || 10000;
+
+console.log(timeMs);
 
 console.log("Producer - Creating context");
 
