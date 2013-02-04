@@ -1,5 +1,7 @@
 var context = require('rabbit.js').createContext();
 
+var start, end;
+
 console.log("Producer - Creating context");
 
 context.on('ready', function() {
@@ -9,7 +11,14 @@ context.on('ready', function() {
 	pub.connect('events', function() {
 		console.log("Connected to events");
 
-		console.log("Writing to Stream");
-		pub.write(JSON.stringify({welcome: 'rabbit.js'}), 'utf8');
+		start = new Date();
+		end = start.getTime() + 10000;
+		console.log("Start Sending", start.getTime());
+		while(end >= new Date().getTime()){
+			pub.write(JSON.stringify({welcome: 'rabbit.js'}), 'utf8');
+		}
+		pub.write(JSON.stringfy({"end": 1}))
+		console.log("Finish Sending", end);
 	});
 });
+
