@@ -1,0 +1,13 @@
+{
+  "name": "sse_st_client",
+  "version": "0.0.1",
+
+  "dependencies": {
+    "rabbit.js": "0.2.x"
+  },
+  
+  "engines": {
+    "node": "0.8.x",
+    "npm": "1.1.x"
+  }
+}
