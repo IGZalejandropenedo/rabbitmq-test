@@ -1,4 +1,5 @@
 var context = require('rabbit.js').createContext();
+var start;
 
 console.log("Consumer - Creating context");
 
@@ -15,7 +16,7 @@ context.on('ready', function() {
 			
 			if(!start) {
 				start = new Date();
-				console.log("Start Receiving", (new Date()).getTime());
+				console.log("Start Receiving", start.getTime());
 			}
 			
 			if(d.end) {
