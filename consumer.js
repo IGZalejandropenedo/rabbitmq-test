@@ -15,11 +15,11 @@ context.on('ready', function() {
 			
 			if(!start) {
 				start = new Date();
-				console.log("Start Receiving", start.getTime());
+				console.log("Start Receiving", (new Date()).getTime());
 			}
 			
 			if(d.end) {
-				console.log("End Receiving", new Date().getTime());
+				console.log("End Receiving", (new Date()).getTime());
 			}
 			//console.log("Message", data)
 		})

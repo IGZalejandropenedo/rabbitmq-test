@@ -14,7 +14,7 @@ context.on('ready', function() {
 		start = new Date();
 		end = start.getTime() + 10000;
 		console.log("Start Sending", start.getTime());
-		while(end >= new Date().getTime()){
+		while(end >= (new Date()).getTime()){
 			pub.write(JSON.stringify({welcome: 'rabbit.js'}), 'utf8');
 		}
 		pub.write(JSON.stringfy({"end": 1}))
