@@ -24,7 +24,7 @@ context.on('ready', function() {
 			
 			if(d.end) {
 				var end = (new Date()).getTime();
-				console.log("End Receiving: " +  end, "Time: " + (end - start) ,"Count:" + count);
+				console.log("End Receiving: " +  end + " ms", "Time: " + (end - start) + " ms" ,"Count:" + count);
 				process.exit(0);
 			} else {
 				count++;
