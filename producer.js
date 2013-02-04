@@ -1,7 +1,11 @@
+require("nodetime").profile();
+
 var context = require('rabbit.js').createContext();
 
 var start, end;
 var count = 0;
+var timeMs = 60000;
+
 console.log("Producer - Creating context");
 
 context.on('ready', function() {
@@ -12,7 +16,7 @@ context.on('ready', function() {
 		console.log("Connected to events");
 
 		start = new Date();
-		end = start.getTime() + 10000;
+		end = start.getTime() + timeMs;
 		console.log("Start Sending", start.getTime());
 		while(end >= (new Date()).getTime()){
 			pub.write(JSON.stringify({welcome: 'rabbit.js'}), 'utf8');

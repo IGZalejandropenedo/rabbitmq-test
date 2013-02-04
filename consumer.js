@@ -1,3 +1,5 @@
+require("nodetime").profile();
+
 var context = require('rabbit.js').createContext();
 var start;
 var count = 0;

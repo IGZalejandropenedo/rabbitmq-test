@@ -3,7 +3,8 @@
   "version": "0.0.1",
 
   "dependencies": {
-    "rabbit.js": "0.2.x"
+    "rabbit.js": "0.2.x",
+    "nodetime": "0.6.x"
   },
   
   "engines": {
