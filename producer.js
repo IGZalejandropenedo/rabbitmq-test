@@ -1,21 +1,10 @@
 require("nodetime").profile();
 
-function sleep(milliseconds) {
-  var start = new Date().getTime();
-  for (var i = 0; i < 1e7; i++) {
-    if ((new Date().getTime() - start) > milliseconds){
-      break;
-    }
-  }
-}
-
-sleep(1000);
-
 var context = require('rabbit.js').createContext();
 
 var start, end;
 var count = 0;
-var timeMs = 60000;
+var timeMs = process.argv[2] || 10000;
 
 console.log("Producer - Creating context");
 
