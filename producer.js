@@ -17,7 +17,7 @@ context.on('ready', function() {
 		while(end >= (new Date()).getTime()){
 			pub.write(JSON.stringify({welcome: 'rabbit.js'}), 'utf8');
 		}
-		pub.write(JSON.stringfy({"end": 1}))
+		pub.write(JSON.stringify({"end": 1}))
 		console.log("Finish Sending", end);
 	});
 });
