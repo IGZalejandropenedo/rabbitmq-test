@@ -5,7 +5,7 @@ var context = require('rabbit.js').createContext();
 var start, end;
 var count = 0;
 
-var timeMs = (!!process.argv[2] ? process.argv[2] : 10000);
+var timeMs = (!!process.argv[2] ? parseInt(process.argv[2]) : 10000);
 
 console.log(timeMs);
 
