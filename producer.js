@@ -19,7 +19,7 @@ context.on('ready', function() {
 			count++;
 		}
 		pub.write(JSON.stringify({"end": 1}))
-		console.log("Finish Sending", end, "Count: " + count);
+		console.log("Finished Sending: " +  end, "Time: " + (end - start) ,"Count:" + count);
 		process.exit(0);
 	});
 });
