@@ -11,7 +11,17 @@ context.on('ready', function() {
 
 		sub.setEncoding("utf-8");
 		sub.on("data", function(data){
-			console.log("Message", data)
+			var d = JSON.parse(data);
+			
+			if(!start) {
+				start = new Date();
+				console.log("Start Receiving", start.getTime());
+			}
+			
+			if(d.end) {
+				console.log("End Receiving", new Date.getTime());
+			}
+			//console.log("Message", data)
 		})
 	});
 
