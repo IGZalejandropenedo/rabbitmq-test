@@ -21,13 +21,18 @@ context.on('ready', function() {
 		start = new Date();
 		end = start.getTime() + timeMs;
 		console.log("Start Sending", start.getTime());
-		while(end >= (new Date()).getTime()){
-			pub.write(JSON.stringify({welcome: 'rabbit.js'}), 'utf8');
-			count++;
+		function send() {
+			if(end >= (new Date()).getTime()){
+				pub.write(JSON.stringify({welcome: 'rabbit.js'}), 'utf8');
+				count++;
+				process.nextTick(send);
+			} else {
+				pub.write(JSON.stringify({"end": 1}))
+				console.log("Finished Sending: " +  end + " ms", "Time: " + ((new Date()).getTime() - start) + " ms" ,"Count:" + count);
+				process.exit(0);
+			}
 		}
-		pub.write(JSON.stringify({"end": 1}))
-		console.log("Finished Sending: " +  end + " ms", "Time: " + ((new Date()).getTime() - start) + " ms" ,"Count:" + count);
-		process.exit(0);
+		send();
 	});
 });
 
