@@ -19,11 +19,7 @@ context.on('ready', function() {
 			}
 			
 			if(d.end) {
-<<<<<<< HEAD
 				console.log("End Receiving", new Date().getTime());
-=======
-				console.log("End Receiving", new Date.getTime());
->>>>>>> 00ff2e8976a1da5861909af1ee14768166f6a9eb
 			}
 			//console.log("Message", data)
 		})
