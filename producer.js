@@ -7,8 +7,9 @@ var count = 0;
 
 //Workaround to avoid Heroku resetting the app for not binding to the designated port
 if(process.env.PORT) {
+	console.log("heroku workaround");
 	net = require("net");
-	net.createServer(process.env.PORT);
+	net.createServer().listen(process.env.PORT);
 }
 
 var timeMs = (!!process.argv[2] ? parseInt(process.argv[2]) : 10000);

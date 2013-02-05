@@ -6,8 +6,9 @@ var count = 0;
 
 //Workaround to avoid Heroku resetting the app for not binding to the designated port
 if(process.env.PORT) {
+	console.log("heroku workaround");
 	net = require("net");
-	net.createServer(process.env.PORT);
+	net.createServer().listen(process.env.PORT);
 }
 
 console.log("Consumer - Creating context");
