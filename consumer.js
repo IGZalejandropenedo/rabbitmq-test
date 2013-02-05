@@ -1,6 +1,6 @@
 require("nodetime").profile();
 
-var context = require('rabbit.js').createContext();
+var context = require('rabbit.js').createContext('amqp://ec2-46-137-6-37.eu-west-1.compute.amazonaws.com:5672');
 var start;
 var count = 0;
 
