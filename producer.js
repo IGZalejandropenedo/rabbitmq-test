@@ -5,6 +5,12 @@ var context = require('rabbit.js').createContext('amqp://ec2-46-137-6-37.eu-west
 var start, end;
 var count = 0;
 
+//Workaround to avoid Heroku resetting the app for not binding to the designated port
+if(process.env.PORT) {
+	net = require("net");
+	net.createServer(process.env.PORT);
+}
+
 var timeMs = (!!process.argv[2] ? parseInt(process.argv[2]) : 10000);
 
 console.log("Producer - Creating context");
